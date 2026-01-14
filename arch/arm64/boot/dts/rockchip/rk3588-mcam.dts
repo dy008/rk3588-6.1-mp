@@ -126,7 +126,7 @@
 		io-channel-names = "adc-detect";
 		keyup-threshold-microvolt = <1800000>;
 		poll-interval = <100>;
-		spk-con-gpio = <&gpio4 RK_PA2 GPIO_ACTIVE_HIGH>;
+		spk-con-gpio = <&gpio4 RK_PA2 GPIO_ACTIVE_LOW>;
 		hp-con-gpio = <&gpio4 RK_PA7 GPIO_ACTIVE_HIGH>;
 		rockchip,format = "i2s";
 		rockchip,mclk-fs = <256>;
@@ -567,8 +567,8 @@
 	route {
 		route_hdmi0: route-hdmi0 {
 			status = "okay";
-			logo,uboot = "boot.bmp";
-			logo,kernel = "boot-desktop.png";
+			logo,uboot = "logo.bmp";
+			logo,kernel = "logo_kernel.bmp";
 			logo,mode = "center";
 			charge_logo,mode = "center";
 			connect = <&vp0_out_hdmi0>;
@@ -582,7 +582,7 @@
 
 &hdmi0 {
 	status = "okay";
-	//cec-enable = "true";
+	cec-enable = "true";
 	enable-gpios = <&gpio4 RK_PB1 GPIO_ACTIVE_HIGH>;
 	pinctrl-names = "default";
 	pinctrl-0 = <&hdmim0_tx0_cec &hdmim0_tx0_hpd &hdmim0_tx0_scl &hdmim0_tx0_sda>;
