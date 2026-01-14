@@ -25,7 +25,7 @@
 
 	chosen {
 		bootargs = "earlycon=uart8250,mmio32,0xfeb50000 console=ttyFIQ0 coherent_pool=1m irqchip.gicv3_pseudo_nmi=0";
-		bootargs_ext = "root=/dev/mmcblk0p8 rw rootfstype=ext4 rootflags=discard";
+		bootargs_ext  = "root=/dev/mmcblk0p8 rootfstype=ext4 rootflags=discard data=/dev/mmcblk0p9 ";
 	};
 
 	aliases {
@@ -109,7 +109,7 @@
 		// BT,reset_gpio = <0x12f 0x08 0x01>;
 		BT,reset_gpio = <&gpio0 RK_PB0 GPIO_ACTIVE_LOW>;
 		status = "okay";
-	};	// ok */
+	}; */
 
 /* 	wireless_wlan: wireless-wlan {
 		compatible = "wlan-platdata";
@@ -126,6 +126,7 @@
 		io-channel-names = "adc-detect";
 		keyup-threshold-microvolt = <1800000>;
 		poll-interval = <100>;
+		spk-con-gpio = <&gpio4 RK_PA2 GPIO_ACTIVE_HIGH>;
 		hp-con-gpio = <&gpio4 RK_PA7 GPIO_ACTIVE_HIGH>;
 		rockchip,format = "i2s";
 		rockchip,mclk-fs = <256>;
