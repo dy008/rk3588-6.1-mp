@@ -252,6 +252,16 @@ nanopi6-images: nanopi4-images
 PHONY += resource.img nanopi4-images nanopi5-images nanopi6-images
 endif
 
+ifeq ($(CONFIG_VENDOR_DY008),y)
+DTBS := rk3*-mcam.dtb
+
+resource.img: dtbs $(LOGO) $(LOGO_KERNEL)
+	$(Q)$(srctree)/scripts/mkimg --dtb $(DTBS) --keep-dtb-name
+
+mcam-images: kernel.img resource.img
+PHONY += resource.img mcam-images
+endif
+
 %.img: kernel.img
 ifeq ("$(CONFIG_MODULES)$(MAKE_MODULES)$(srctree)","yy$(objtree)")
 	$(Q)$(MAKE) rockchip/$*.dtb Image.lz4 modules

@@ -158,7 +158,7 @@
 				regulator-name = "vdd_gpu_s0";
 				regulator-enable-ramp-delay = <400>;
 				regulator-state-mem {
-					regulator-off-in-suspend;
+					regulator-always-on;
 				};
 			};
 

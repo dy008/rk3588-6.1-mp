@@ -44,7 +44,7 @@ dtb-$(CONFIG_ARCH_ROCKCHIP) += \
 	rk3588-nanopi6-rev07.dtb \
 	rk3588-nanopi6-rev08.dtb \
 	rk3588-nanopi6-rev09.dtb \
-	rk3588-nanopi6-rev0a.dtb
+	rk3588-nanopi6-rev0a.dtb 
 
 else
 
@@ -422,5 +422,6 @@ dtb-$(CONFIG_ARCH_ROCKCHIP) += rv1126b-evb3-v10.dtb
 dtb-$(CONFIG_ARCH_ROCKCHIP) += rv1126b-evb4-v10.dtb
 dtb-$(CONFIG_ARCH_ROCKCHIP) += rv1126b-iotest-v10.dtb
 dtb-$(CONFIG_ARCH_ROCKCHIP) += rv1126bp-evb-v14.dtb
+dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3588-mcam.dtb
 
 endif

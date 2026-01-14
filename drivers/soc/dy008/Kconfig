@@ -1,0 +1,11 @@
+#
+# Machine drivers
+#
+
+if ARCH_ROCKCHIP
+
+config VENDOR_DY008
+	bool "dy008 board based on Rockchip SoCs"
+	default n
+
+endif
